@@ -4,9 +4,19 @@ import {
 } from "@mui/icons-material";
 import "./featured.scss";
 
-const Featured = () => {
+const Featured = ({ type }) => {
 	return (
 		<div className="featured">
+			{type && (
+				<div className="category">
+					<span>
+						{type === "movie" ? "Movies" : "Series"}
+					</span>
+					<select name="genre" id="genre">
+						<option>Genre</option>
+					</select>
+				</div>
+			)}
 			<img
 				width="100%"
 				src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
