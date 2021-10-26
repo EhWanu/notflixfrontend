@@ -1,7 +1,7 @@
 import "./list.scss";
 
-const list = () => {
+const List = () => {
 	return <div className="list"></div>;
 };
 
-export default list;
+export default List;
