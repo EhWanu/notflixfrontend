@@ -2,18 +2,26 @@ import {
 	ArrowBackIosNewOutlined,
 	ArrowForwardIosOutlined,
 } from "@mui/icons-material";
+import ListItem from "../listItem/ListItem";
 import "./list.scss";
 
 const List = () => {
 	return (
 		<div className="list">
-			<span className="lisTitle">
+			<span className="listTitle">
 				Continue Watching
 			</span>
 			<div className="wrapper">
-				<ArrowBackIosNewOutlined />
-				<div className="container"></div>
-				<ArrowForwardIosOutlined />
+				<ArrowBackIosNewOutlined className="sliderArrow left" />
+				<div className="container">
+					<ListItem />
+					<ListItem />
+					<ListItem />
+					<ListItem />
+					<ListItem />
+					<ListItem />
+				</div>
+				<ArrowForwardIosOutlined className="sliderArrow right" />
 			</div>
 		</div>
 	);
