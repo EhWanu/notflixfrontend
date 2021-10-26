@@ -9,9 +9,13 @@ import "./list.scss";
 const List = () => {
 	const [slideNumber, setSlideNumber] =
 		useState(0);
+
+	const [isMoved, setIsMoved] = useState(false);
+
 	const listRef = useRef();
 
 	const handClick = (direction) => {
+		setIsMoved(true);
 		let distance =
 			listRef.current.getBoundingClientRect().x - 50;
 		if (direction === "left" && slideNumber > 0) {
@@ -36,6 +40,7 @@ const List = () => {
 				<ArrowBackIosNewOutlined
 					className="sliderArrow left"
 					onClick={() => handClick("left")}
+					style={{ display: !isMoved && "none" }}
 				/>
 				<div className="container" ref={listRef}>
 					<ListItem />
