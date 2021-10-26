@@ -10,8 +10,17 @@ const List = () => {
 	const listRef = useRef();
 
 	const handClick = (direction) => {
+		let distance =
+			listRef.current.getBoundingClientRect().x - 50;
 		if (direction === "left") {
-			listRef.current.style.transform = `translateX(230px)`;
+			listRef.current.style.transform = `translateX(${
+				230 + distance
+			}px)`;
+		}
+		if (direction === "right") {
+			listRef.current.style.transform = `translateX(${
+				-230 + distance
+			}px)`;
 		}
 	};
 	return (
