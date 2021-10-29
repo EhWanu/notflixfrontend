@@ -32,7 +32,7 @@ const Login = () => {
 					<small>
 						This page is protected by Google reCAPTCHA
 						to ensure you're not a bot.
-						<b>Learn more</b>.
+						<b> Learn more</b>.
 					</small>
 				</form>
 			</div>
