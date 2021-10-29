@@ -47,6 +47,10 @@
 				background-color: gray;
 				color: white;
 				padding-left: 10px;
+
+				&::placeholder {
+					color: lightgray;
+				}
 			}
 		}
 	}
