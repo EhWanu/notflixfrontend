@@ -51,6 +51,17 @@
 				&::placeholder {
 					color: lightgray;
 				}
+
+				button {
+					height: 40px;
+					color: white;
+					background-color: red;
+					border-radius: 5px;
+					border: none;
+					font-size: 18px;
+					font-weight: 500;
+					cursor: pointer;
+				}
 			}
 		}
 	}
