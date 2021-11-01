@@ -8,21 +8,42 @@ import {
 	Switch,
 	Route,
 	Link,
+	Redirect,
 } from "react-router-dom";
 
 function App() {
+	const user = true;
 	return (
-		<Switch>
-			<Route path="/about">
-				<About />
-			</Route>
-			<Route path="/users">
-				<Users />
-			</Route>
-			<Route path="/">
-				<Home />
-			</Route>
-		</Switch>
+		<Router>
+			<Switch>
+				<Route exact path="/">
+					{user ? (
+						<Home />
+					) : (
+						<Redirect to="/register" />
+					)}
+				</Route>
+				<Route exact path="/register">
+					{!user ? <Register /> : <Redirect to="/" />}
+				</Route>
+				<Route exact path="/login">
+					{!user ? <Login /> : <Redirect to="/" />}
+				</Route>
+				{user && (
+					<>
+						<Route path="/movies">
+							<Home type="movie" />
+						</Route>
+						<Route path="/series">
+							<Home type="series" />
+						</Route>
+						<Route path="/watch">
+							<Watch />
+						</Route>
+					</>
+				)}
+			</Switch>
+		</Router>
 	);
 }
 
